@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Joshua Phoebus: State Policy Analysis</title>
+<meta name="description" content="Side-by-side comparisons of how states make decisions about data centers, energy, and infrastructure: incentives, utility tariffs, legislation, and accountability.">
+<meta property="og:title" content="Joshua Phoebus: State Policy Analysis">
+<meta property="og:description" content="Side-by-side comparisons of how states make decisions about data centers, energy, and infrastructure: incentives, utility tariffs, legislation, and accountability.">
+<meta property="og:image" content="https://jphoebus.github.io/home-preview.png">
+<meta property="og:url" content="https://jphoebus.github.io/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --limestone: #EDF0F1;
+    --paper: #FFFFFF;
+    --ink: #1B2631;
+    --slate: #52606D;
+    --rule: #CBD2D9;
+    --accent: #1F5C4A;
+    --accent-soft: #DCEBE5;
+    --font: "Public Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--limestone);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 17px;
+    line-height: 1.55;
+  }
+  a { color: var(--accent); text-underline-offset: 2px; }
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .measure { max-width: 68ch; }
+
+  /* Header */
+  header { padding: 64px 0 40px; }
+  h1 {
+    font-size: clamp(2rem, 4.6vw, 3.4rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 20px;
+    max-width: 18ch;
+  }
+  .lede { font-size: 1.15rem; color: var(--slate); margin: 0; }
+
+  /* Where each state stands */
+  .standing {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    border-top: 3px solid var(--ink);
+    margin-top: 40px;
+  }
+  .standing div {
+    padding: 16px 16px 20px 0;
+    border-right: 1px solid var(--rule);
+    padding-left: 16px;
+  }
+  .standing div:first-child { padding-left: 0; }
+  .standing div:last-child { border-right: 0; }
+  .standing strong { display: block; font-size: 1.25rem; font-weight: 700; }
+  .standing span { display: block; color: var(--slate); font-size: 0.95rem; }
+  .standing time { display: block; font-size: 0.85rem; color: var(--accent); font-weight: 600; margin-top: 6px; }
+
+  /* Comparison */
+  section { padding: 48px 0; }
+  h2 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; }
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 20px; align-items: center; }
+  .filters p { margin: 0 8px 0 0; color: var(--slate); font-size: 0.95rem; }
+  .chip {
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border: 1.5px solid var(--accent);
+    border-radius: 999px;
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+  }
+  .chip[aria-pressed="false"] { background: transparent; color: var(--accent); }
+  .table-scroll {
+    overflow-x: auto;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+  }
+  table { border-collapse: collapse; width: 100%; min-width: 980px; font-size: 0.92rem; }
+  th, td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--rule); }
+  thead th {
+    font-size: 1rem;
+    font-weight: 700;
+    border-bottom: 2px solid var(--ink);
+    position: sticky;
+    top: 0;
+    background: var(--paper);
+  }
+  tbody th {
+    font-weight: 600;
+    color: var(--slate);
+    width: 170px;
+    position: sticky;
+    left: 0;
+    background: var(--paper);
+  }
+  tr.group th {
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  [hidden] { display: none !important; }
+  td.empty { color: var(--slate); font-style: italic; }
+  td.sources a { display: block; word-break: break-word; margin-bottom: 4px; }
+  .status-msg { padding: 24px; color: var(--slate); }
+
+  /* Analysis */
+  .analysis { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  .analysis h3 { font-size: 1.1rem; font-weight: 700; margin: 24px 0 4px; }
+  .analysis p { margin: 0; }
+  .question {
+    margin-top: 32px;
+    padding-left: 20px;
+    border-left: 4px solid var(--accent);
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  ul.watch { padding-left: 1.1em; margin: 12px 0 0; }
+  ul.watch li { margin-bottom: 10px; }
+
+  .pjm { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 8px; }
+  .pjm h3 { font-size: 1.1rem; font-weight: 700; margin: 16px 0 4px; }
+  .pjm p { margin: 0; }
+  #pjm { background: var(--paper); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .group { margin-top: 40px; }
+  .group h2 { font-size: 1.15rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); border-bottom: 3px solid var(--ink); padding-bottom: 8px; margin: 0; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+  .card { display: block; padding: 20px 20px 24px 0; border-bottom: 1px solid var(--rule); text-decoration: none; color: var(--ink); }
+  .card + .card { padding-left: 20px; border-left: 1px solid var(--rule); }
+  .card:nth-child(3n+1) { padding-left: 0; border-left: 0; }
+  .card h3 { font-size: 1.2rem; font-weight: 700; margin: 0 0 6px; color: var(--accent); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  .card:hover h3 { text-decoration-thickness: 2px; }
+  .card p { margin: 0 0 10px; color: var(--ink); }
+  .card .meta { font-size: 0.85rem; color: var(--slate); font-weight: 600; }
+  .about p { margin: 0 0 12px; }
+  footer { border-top: 1px solid var(--rule); padding: 40px 0 64px; color: var(--slate); font-size: 0.95rem; }
+  footer p { margin: 0 0 12px; }
+
+  @media (max-width: 800px) {
+    .standing { grid-template-columns: 1fr 1fr; }
+    .standing div { border-right: 0; border-bottom: 1px solid var(--rule); padding-left: 0; }
+    .analysis, .pjm { grid-template-columns: 1fr; gap: 16px; }
+    .cards { grid-template-columns: 1fr; }
+    .card, .card + .card { padding-left: 0; border-left: 0; }
+    header { padding-top: 40px; }
+  }
+  @media print {
+    .filters { display: none; }
+    body { background: #fff; }
+    .table-scroll { overflow: visible; border: 0; }
+    thead th, tbody th { position: static; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>How states make decisions</h1>
+    <p class="lede measure">Side-by-side comparisons of how states decide about data centers, energy, and infrastructure: what they offer, what they require, who pays, and how they check the results. Each project is built from statutes, commission orders, and agency documents, with the underlying data available to download.</p>
+    <p class="lede measure" style="margin-top:12px">By Joshua Phoebus. <a href="https://www.linkedin.com/in/joshuaphoebus">LinkedIn</a> · <a href="https://www.joshuaphoebusllc.com">Website</a></p>
+  </div>
+</header>
+
+<main>
+  <section class="group">
+    <div class="wrap">
+      <h2>Data centers and the grid</h2>
+      <div class="cards">
+        <a class="card" href="https://jphoebus.github.io/large-load-screening/"><h3>Which data center load counts</h3><p>How six PJM states screen data center electricity requests before they count in the load forecast: forecast review, contract terms, collateral, and duplicate-request disclosure.</p><span class="meta">PA, VA, OH, MD, NJ, IL</span></a><a class="card" href="https://jphoebus.github.io/large-load-tariffs/"><h3>Who pays for data center power</h3><p>How states set the terms large electricity customers must accept: size thresholds, minimum bills, contract terms, exit fees, and collateral.</p><span class="meta">PA, VA, OH, MD, GA</span></a><a class="card" href="https://jphoebus.github.io/data-center-legislation-2026/"><h3>What states changed on data centers in 2026</h3><p>What legislatures, governors, utility regulators, and local governments changed this year, and where each change came from.</p><span class="meta">PA, VA, OH, MD, GA</span></a>
+      </div>
+    </div>
+  </section>
+  <section class="group">
+    <div class="wrap">
+      <h2>Incentives and accountability</h2>
+      <div class="cards">
+        <a class="card" href="https://jphoebus.github.io/state-incentive-comparison/"><h3>State data center incentives, compared</h3><p>How states structure their data center sales tax exemptions: eligibility, investment and job requirements, and duration.</p><span class="meta">PA, VA, OH, MD, GA</span></a><a class="card" href="https://jphoebus.github.io/data-center-exempt-equipment/"><h3>What counts as exempt data center equipment</h3><p>Which equipment qualifies under each state's data center sales tax exemption.</p><span class="meta">PA, VA, OH, MD, GA</span></a><a class="card" href="https://jphoebus.github.io/tax-incentive-evaluation/"><h3>How states check their tax incentives</h3><p>How states evaluate whether their tax incentives deliver what they promise.</p><span class="meta">Ten states</span></a>
+      </div>
+    </div>
+  </section>
+  <section class="group">
+    <div class="wrap">
+      <h2>Infrastructure and what comes next</h2>
+      <div class="cards">
+        <a class="card" href="https://jphoebus.github.io/spark-grid-tracker/"><h3>DOE's SPARK grid selections, tracked</h3><p>The Department of Energy's SPARK grid-upgrade selections, tracked as they move forward.</p><span class="meta">Federal program, state projects</span></a><a class="card" href="https://jphoebus.github.io/quantum-readiness/"><h3>Are state rules ready for quantum computing?</h3><p>Whether state data center incentives, tariffs, and reporting rules address quantum computing, and how states are preparing.</p><span class="meta">PA, VA, OH, MD, GA</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="wrap measure">
+      <h2>About</h2>
+      <p>I spent seven and a half years in Pennsylvania state government, including four years as Director of Performance and Transformation in the Office of Governor Tom Wolf, where I led the Commonwealth's performance-based budgeting engagement across twenty-nine executive agencies and guided agencies on compliance with the tax credit reviews required under Act 48.</p>
+      <p>These projects apply that experience to the decisions states are making now about data centers, energy, and infrastructure. Each comparison is current as of the date on its page, and each lists its sources. They are for policy analysis and are not legal or regulatory advice.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap measure">
+    <p>Joshua Phoebus · <a href="https://www.linkedin.com/in/joshuaphoebus">LinkedIn</a> · <a href="https://www.joshuaphoebusllc.com">joshuaphoebusllc.com</a> · <a href="https://github.com/jphoebus">GitHub</a></p>
+  </div>
+</footer>
+</body>
+</html>
