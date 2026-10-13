@@ -1,6 +1,6 @@
 # Joshua Phoebus: State Policy Analysis
 
-Side-by-side comparisons of how states make decisions about data centers, energy, and infrastructure: incentives, utility tariffs, legislation, and accountability.
+Side-by-side comparisons of how states make decisions when a new industry outgrows the existing rules: data centers, energy, infrastructure, and payments.
 
 **Homepage:** [jphoebus.github.io](https://jphoebus.github.io/)
 
@@ -20,6 +20,10 @@ Side-by-side comparisons of how states make decisions about data centers, energy
 
 - [DOE's SPARK grid selections, tracked](https://jphoebus.github.io/spark-grid-tracker/): The Department of Energy's SPARK grid-upgrade selections, tracked as they move forward.
 - [Are state rules ready for quantum computing?](https://jphoebus.github.io/quantum-readiness/): Whether state data center incentives, tariffs, and reporting rules address quantum computing, and how states are preparing.
+
+## Payments and consumer finance
+
+- [Is it a loan? How states set payments rules](https://jphoebus.github.io/state-payments-policy/): How eleven states classify earned wage access, how a federal bill would change state authority, and how Illinois and Colorado handled card fees on sales tax and tips.
 
 ## About
 
