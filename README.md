@@ -1,6 +1,6 @@
 # Joshua Phoebus: State Policy Analysis
 
-Side-by-side comparisons of how states make decisions when a new industry outgrows the existing rules: data centers, energy, infrastructure, and payments.
+Side-by-side comparisons of how states make decisions when a new industry outgrows the existing rules: data centers, energy, infrastructure, payments, and health care.
 
 **Homepage:** [jphoebus.github.io](https://jphoebus.github.io/)
 
@@ -24,6 +24,10 @@ Side-by-side comparisons of how states make decisions when a new industry outgro
 ## Payments and consumer finance
 
 - [Is it a loan? How states set payments rules](https://jphoebus.github.io/state-payments-policy/): How eleven states classify earned wage access, how a federal bill would change state authority, and how Illinois and Colorado handled card fees on sales tax and tips.
+
+## Health care and pharmaceuticals
+
+- [Who sets the price of a prescription?](https://jphoebus.github.io/state-drug-supply-chain/): How five states regulate pharmacy benefit managers, drug prices, and 340B contract pharmacy arrangements.
 
 ## About
 
