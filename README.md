@@ -32,7 +32,7 @@ Side-by-side comparisons of how states make decisions when a new industry outgro
 
 ## About
 
-I'm Joshua Phoebus. I spent seven and a half years in Pennsylvania state government, including four years as Director of Performance and Transformation in the Office of Governor Tom Wolf, where I led the Commonwealth's performance-based budgeting engagement across twenty-nine executive agencies and guided agencies on compliance with the tax credit reviews required under Act 48.
+I'm Joshua Phoebus. I spent seven and a half years in Pennsylvania state government, including more than four years as Director of Performance and Transformation in the Office of Governor Tom Wolf, where I led the Commonwealth's performance-based budgeting engagement across twenty-nine executive agencies and guided agencies on compliance with the tax credit reviews required under Act 48.
 
 - LinkedIn: [linkedin.com/in/joshuaphoebus](https://www.linkedin.com/in/joshuaphoebus)
 - Website: [joshuaphoebusllc.com](https://www.joshuaphoebusllc.com)
