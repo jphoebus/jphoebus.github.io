@@ -9,6 +9,7 @@ Side-by-side comparisons of how states make decisions when a new industry outgro
 - [Which data center load counts](https://jphoebus.github.io/large-load-screening/): How six PJM states screen data center electricity requests before they count in the load forecast: forecast review, contract terms, collateral, and duplicate-request disclosure.
 - [Who pays for data center power](https://jphoebus.github.io/large-load-tariffs/): How states set the terms large electricity customers must accept: size thresholds, minimum bills, contract terms, exit fees, and collateral.
 - [What states changed on data centers in 2026](https://jphoebus.github.io/data-center-legislation-2026/): What legislatures, governors, utility regulators, and local governments changed this year, and where each change came from.
+- [Who approves a data center?](https://jphoebus.github.io/data-center-siting/): How five states decide where data centers can be built: local zoning, state permits, regional review and utility rules.
 
 ## Incentives and accountability
 
