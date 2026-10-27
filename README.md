@@ -30,6 +30,7 @@ Side-by-side comparisons of how states make decisions when a new industry outgro
 
 - [Who sets the price of a prescription?](https://jphoebus.github.io/state-drug-supply-chain/): How five states regulate pharmacy benefit managers, drug prices, and 340B contract pharmacy arrangements.
 - [Who arranges the ride?](https://jphoebus.github.io/medicaid-transportation/): How five Northeast states run Medicaid non-emergency medical transportation: delivery models, broker contracts, procurement, and 2025–26 legislation.
+- [Where an MRI can go: state approval rules for advanced imaging](https://jphoebus.github.io/imaging-access/): How nine states decide whether a hospital, clinic, or imaging company can add an MRI or CT scanner — certificate-of-need rules, mobile units, and rural access.
 
 ## About
 
